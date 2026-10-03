@@ -1,7 +1,7 @@
 import torch
 from torch import nn
 import torch.nn.functional as F
-from developmodel.peak_base.src.config import PeakConfig
+from peak.core.config import PeakConfig
 
 
 class SwiGLU(nn.Module):

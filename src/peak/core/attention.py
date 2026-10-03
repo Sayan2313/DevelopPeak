@@ -4,8 +4,8 @@ import torch
 import torch.nn.functional as F
 from torch import Tensor, nn
 
-from developmodel.peak_base.src.config import PeakConfig
-from developmodel.peak_base.src.rope import apply_rope
+from peak.core.config import PeakConfig
+from peak.core.rope import apply_rope
 
 
 class CausalSelfAttentionGQA(nn.Module):
@@ -60,9 +60,9 @@ class CausalSelfAttentionGQA(nn.Module):
             new_kv_cache = None
         # Attention Calculation
         if self.training:
-            out = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, dropout_p=0.0,is_causal=(attn_mask is None),enable_gqa=True)
+            out = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask, dropout_p=0.0,is_causal=(attn_mask is None),enable_gqa=False)
         else:
-            out = F.scaled_dot_product_attention(q, k, v, attn_mask=None, dropout_p=0.0,is_causal=False,enable_gqa=True)
+            out = F.scaled_dot_product_attention(q, k, v, attn_mask=None, dropout_p=0.0,is_causal=False,enable_gqa=False)
 
         out = out.transpose(1, 2).contiguous().view(B, S, C)
         return self.dropout_layer(self.out_proj(out)) , new_kv_cache

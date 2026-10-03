@@ -1,9 +1,9 @@
 import torch
 from torch import nn
 
-from developmodel.peak_base.src.attention import CausalSelfAttentionGQA
-from developmodel.peak_base.src.config import PeakConfig
-from developmodel.peak_base.src.mlp import SwiGLU
+from peak.core.attention import CausalSelfAttentionGQA
+from peak.core.config import PeakConfig
+from peak.core.mlp import SwiGLU
 
 
 class TransformerBlock(nn.Module):

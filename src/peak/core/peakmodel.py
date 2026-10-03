@@ -1,9 +1,9 @@
 import torch
 from torch import nn
 
-from developmodel.peak_base.src.config import PeakConfig
-from developmodel.peak_base.src.rope import precompute_rope_cache
-from developmodel.peak_base.src.transformer import TransformerBlock
+from peak.core.config import PeakConfig
+from peak.core.rope import precompute_rope_cache
+from peak.core.transformer import TransformerBlock
 
 
 class PeakModel(nn.Module):
@@ -16,7 +16,7 @@ class PeakModel(nn.Module):
             self.dropout_layer = nn.Dropout(dropout)
         else:
             self.dropout_layer = nn.Dropout(0.0)
-        # Transformer blocks
+        # Use  Transformer blocks
         self.layers = nn.ModuleList([
             TransformerBlock(config,self.dropout_layer) for _ in range(config.n_layers)
         ])
@@ -31,6 +31,7 @@ class PeakModel(nn.Module):
         self.register_buffer("rope_sin",sin,persistent=False)
 
         self.is_inference_mode = is_inference_mode
+        self.config = config
 
     def forward(self,input_ids: torch.Tensor,attention_mask: torch.Tensor | None = None,kv_cache = None):
         B, S = input_ids.shape

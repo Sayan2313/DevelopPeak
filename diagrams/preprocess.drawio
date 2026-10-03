@@ -1,0 +1,37 @@
+<mxfile host="65bd71144e">
+    <diagram id="1D-Qo_oglvXgrDSK3vQQ" name="Page-1">
+        <mxGraphModel dx="940" dy="403" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-6" edge="1" parent="1" source="hdD4cuz6UIjw_E6LsRKx-2" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="hdD4cuz6UIjw_E6LsRKx-5" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Clear and Filter(Regex)" vertex="1">
+                    <mxGeometry height="60" width="120" x="290" y="140" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-4" edge="1" parent="1" source="hdD4cuz6UIjw_E6LsRKx-3" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="hdD4cuz6UIjw_E6LsRKx-2" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-3" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="Train.jsonl / val.jsonl" vertex="1">
+                    <mxGeometry height="30" width="130" x="285" y="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-9" edge="1" parent="1" source="hdD4cuz6UIjw_E6LsRKx-5" style="edgeStyle=orthogonalEdgeStyle;html=1;" target="hdD4cuz6UIjw_E6LsRKx-7" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Encode via Custom BPE with &amp;lt;bos&amp;gt; + input ids + &amp;lt;eos&amp;gt;" vertex="1">
+                    <mxGeometry height="60" width="120" x="290" y="220" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-11" edge="1" parent="1" source="hdD4cuz6UIjw_E6LsRKx-7" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="hdD4cuz6UIjw_E6LsRKx-10">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Greedy Packing&amp;nbsp;&lt;div&gt;1. Pack stories contiguously)&lt;/div&gt;&lt;div&gt;2. Add minimal &amp;lt;pad&amp;gt; only if window cannot fit next story&lt;/div&gt;" vertex="1">
+                    <mxGeometry height="60" width="320" x="190" y="310" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdD4cuz6UIjw_E6LsRKx-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Stream to Disk(.bin,.idx)" vertex="1">
+                    <mxGeometry height="40" width="139" x="280.5" y="400" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

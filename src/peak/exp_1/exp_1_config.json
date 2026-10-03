@@ -1,0 +1,29 @@
+{
+  "tokenizer": {
+    "type": "BPE"
+  },
+  "model": {
+    "model_type": "Decoder Transformer",
+    "model_name": "Peak",
+    "vocab_size": 4096,
+    "ctx_length": 512,
+    "d_model": 256,
+    "n_layers": 6,
+    "n_heads": 8,
+    "n_kv_heads": 8,
+    "d_ff": 2048
+  },
+  "training": {
+    "batch_size": 16,
+    "gradient_accumulation_steps": 2,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "max_grad_norm": 1.0,
+    "epochs": 3,
+    "warmup_ratio": 0.03,
+    "dropout": 0.1
+  },
+  "data": {
+    "dataset" : "Tinystories"
+  }
+}
